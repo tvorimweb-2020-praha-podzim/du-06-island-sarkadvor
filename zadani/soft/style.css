@@ -20,13 +20,48 @@ body {
 
 /* HLAVICKA */
 
+.hlavicka {
+    background-image: url('/../images/island-hlavicka.jpg');
+    background-color: #cccccc;
+    max-width: 500px;
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 0.5rem 1.5rem;
+}
+
 .titulek {
     font-family: 'Raleway', serif;
+    font-size: 2.5rem;
 }
 
 
 /* MENU */
 
+li {
+    display: inline-block;
+    padding: 0.25rem;
+    max-width: auto;
+    border-bottom: 1px grey solid;
+
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    max-width: 100%;
+    color: grey;
+
+}
 
 
 
@@ -41,3 +76,17 @@ body {
 
 
 /* PATICKA */
+
+.paticka {
+    display: flex;
+    flex-direction: column;
+    color: darkslategrey;
+    background-color: #e2e2e2ea;
+    padding: 0.5rem 1.5rem;
+}
+
+.paticka a {
+    color: darkslategrey;
+}
+
+/*Jak dát stín hornnějšku boxu patičky? Dodělat meníčko - pohrát si s šířkou tlačítek víc, aby spodní border byl přes celou stránku*/
