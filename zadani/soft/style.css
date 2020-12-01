@@ -62,6 +62,7 @@ li {
     display: flex;
     flex-direction: column;
     padding-left: 0;
+    margin: 0;
 }
 
 li a {
@@ -153,6 +154,7 @@ li a {
 
     .bila {
         max-width: 999px;
+        padding-bottom: 225px;
     }
 
     .hlavicka {
@@ -204,30 +206,19 @@ li a {
     .galerie {
         max-width: 799px;
         padding: 0rem;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: repeat(5, 25%);
     }
 
     .foto {
         overflow: hidden;
     }
 
-    .sloup1,
-    .sloup2 {
-        max-width: 50%;
-    }
-
-    .sloup2 {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
     .foto img {
         max-width: 100%;
         max-height: auto;
+        object-fit: cover;
     }
 
     figure {
@@ -265,9 +256,67 @@ li a {
 /*Počítačová verze*/
 
 @media only screen and (min-width: 1000px) {
-    
+    .bila {
+        max-width: 960px;
+        position: absolute;
+        left: 20px;
+        top: 280px;
+    }
+
+    .hlavicka {
+        max-width: 1000px;
+        height: auto;
+        padding-bottom: 4rem;
+    }
+
+    .galerie {
+        max-width: 960px;
+        padding: 0rem;
+        display: grid;
+        grid-template-columns: repeat(3, calc(100%/3));
+        grid-template-rows: repeat(3, 25%);
+        grid-gap: 0;
+    }
+
+    .foto img {
+        max-width: 100%;
+        max-height: auto;
+        object-fit: cover;
+    }
+
+    .foto {
+        overflow: hidden;
+    }
+
+    figure {
+        display: flex;
+        position: relative;
+        margin: 0;
+    }
+
+    figure figcaption {
+        position: absolute;
+        bottom: -2.5rem;
+        left: calc(100%/4);
+    }
+
+    figure .popisek {
+        color: white;
+    }
+
+    figure:hover figcaption {
+        position: absolute;
+        bottom: 0.5rem;
+        left: calc(100%/4);
+        display: inline !important;
+        transition: 0.5s;
+    }
+
+    .foto:hover img {
+        transition: 0.5s;
+        transform: scale(1.25);
+    }
+
 }
 
-/*Vykoumat nefungující obrázky a vrhnout se na tabletovou verzi*/
-
-/*Zjistit zda by i mobilní verze neměla být jeden velký flex box s column direction a položky podle toho zarovnány?i*/
+/*dořešit posunutou patičku, pak pokračovat meníčkem (omezit šířku, dát do flexu a do column..*/
