@@ -25,6 +25,8 @@ body {
     box-shadow: 5px 10px 18px #888888;
     max-width: 500px;
     font-size: 0.9rem;
+    padding: 1.5rem;
+    padding-top: 0.5rem;
 }
 
 /* HLAVICKA */
@@ -71,14 +73,7 @@ li a {
     color: rgb(179, 179, 179);
 }
 
-
-
 /* OBSAH */
-
-.obsah {
-    padding: 1.5rem;
-    padding-top: 0.5rem;
-}
 
 .popisek {
     font-size: 0.8rem;
@@ -95,7 +90,7 @@ li a {
     padding: 0.5rem;
 }
   
-  .nadpis:after {
+.nadpis:after {
     content: '';
     width: 80px;
     height: 4px;
@@ -115,15 +110,14 @@ li a {
 /* FOTOGALERIE */
 
 .galerie {
-    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
 }
 
 .galerie .foto {
     max-width: 100%;
     height: auto;
+    margin: 0;
 }
 .galerie .popisek {
     font-weight: 700;
@@ -132,7 +126,6 @@ li a {
 .galerie .popisek-copy {
     font-weight: 400;
 }
-
 
 /* PATICKA */
 
@@ -165,7 +158,6 @@ li a {
 
     .menu {
         border-top: 1px  rgb(179, 179, 179) solid;
-        margin-top: 2rem;
         margin-bottom: 2rem;
      }
 
@@ -208,7 +200,8 @@ li a {
         padding: 0rem;
         display: grid;
         grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(5, 25%);
+        grid-template-rows: repeat(5, 20%);
+        justify-content: center;
     }
 
     .foto {
@@ -250,31 +243,66 @@ li a {
         transform: scale(1.25);
     }
 
-
 }
 
 /*Počítačová verze*/
 
 @media only screen and (min-width: 1000px) {
+
+    /*obsah*/
     .bila {
         max-width: 960px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .obrazek {
+        position: relative;
+        margin-left: -24px;
+        margin-right: -34px;
+
+    }
+
+    .obrazek p {
         position: absolute;
-        left: 20px;
-        top: 280px;
+        bottom: 0.1rem;
+        right: 1rem;
+        font-size: 0.7rem;
+        color: rgb(231, 231, 231)
+            }
+
+    .popisek a {
+        color: rgb(231, 231, 231);
     }
 
+    /*hlavička*/
     .hlavicka {
-        max-width: 1000px;
+        max-width: fit-content;
         height: auto;
-        padding-bottom: 4rem;
+        margin-bottom: -1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    .hlavicka p {
+        max-width: 50%;
+    }
+
+    /*galerie*/
     .galerie {
         max-width: 960px;
         padding: 0rem;
         display: grid;
         grid-template-columns: repeat(3, calc(100%/3));
-        grid-template-rows: repeat(3, 25%);
+        grid-template-rows: repeat(3, calc(100%/3));
         grid-gap: 0;
     }
 
@@ -317,6 +345,27 @@ li a {
         transform: scale(1.25);
     }
 
+    /*menu*/
+    .menu {
+        width: 20%;
+    }
+
+    .prava {
+        width: 70%;
+        position: relative;
+        left: 25%;
+        margin-top: -170px;
+    }
+
+    .zmena-prava {
+        padding-left: 25%;
+    }
+
+    .zmena-leva {
+        padding-right: 25%;
+    }
 }
 
-/*dořešit posunutou patičku, pak pokračovat meníčkem (omezit šířku, dát do flexu a do column..*/
+
+/*Kosmetické chyby - patička v desktopové verzi je na středu, jak ji posunout, aby začínala souběžně s levou hranou bílé?
+Galerie je dole odsazená/přetéká podle velikosti stránky - čím to je? Zkusit opravit.*/
