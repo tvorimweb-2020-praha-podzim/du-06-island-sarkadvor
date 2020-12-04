@@ -17,7 +17,7 @@ body {
     font-family: 'Merriweather', serif;
     font-size: 16px;
     line-height: 1.6;
-    min-width: 300px;
+    min-width: 450px;
 }
 
 .bila {
@@ -134,7 +134,6 @@ li a {
     flex-direction: column;
     color: darkslategrey;
     padding: 0.5rem 1.5rem;
-    max-width: 500px;
 }
 
 .paticka a {
@@ -147,7 +146,6 @@ li a {
 
     .bila {
         max-width: 999px;
-        padding-bottom: 225px;
     }
 
     .hlavicka {
@@ -255,6 +253,7 @@ li a {
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        padding-bottom: O;
     }
 
     body {
@@ -363,6 +362,10 @@ li a {
 
     .zmena-leva {
         padding-right: 25%;
+    }
+
+    .paticka {
+        width: 960px;
     }
 }
 
